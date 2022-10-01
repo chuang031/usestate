@@ -1,7 +1,21 @@
+  import {useState} from 'react';
+   import './UseState.css';
+
 const UseState = () => {
+       const [theme, setTheme] = useState('light');
+       const [counter, setCounter] = useState(0)
   return (
-    <div>
+    <div className = {theme}>
       <h1>UseState Component</h1>
+      <button onClick={()=> setTheme('dark')}>Dark</button>
+       <button onClick={()=> setTheme('light')}>Light</button>
+        <h1>{counter}</h1>
+       <button onClick={()=> setCounter((prevCount) => prevCount + 1)}>Increment</button>
+       <button onClick={()=> setCounter((prevCount) => prevCount - 1)}>Decrement</button>
+     
+      
+      
+    
     </div>
   );
 };
